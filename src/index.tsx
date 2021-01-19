@@ -1,5 +1,4 @@
 import * as React from 'react'
-import styles from './styles.module.css'
 
 export type PushPreviewTarget = 'DesktopChrome' | 'DeskopFirefox' | 'DesktopMacOS' | 'MobileAndroid' | 'MobileIOS';
 
@@ -48,12 +47,12 @@ export const PushPreview = (props: PushPreviewProps) => {
     } = props;
 
     return (
-        <div className={styles.test}>
-            <Image className={styles.image} src={imageUrl} />
+        <div className='test'>
+            <Image className='image' src={imageUrl} />
 
 
             <div>
-                <Image className={styles.icon} src={iconUrl} fallbackSrc='https://raw.githubusercontent.com/notifo-io/notifo/main/media/logo-square.png' />
+                <Image className='icon' src={iconUrl} fallbackSrc='https://raw.githubusercontent.com/notifo-io/notifo/main/media/logo-square.png' />
                 
                 <span>{appName || 'Your App'}</span>
             </div>

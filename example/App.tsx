@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import * as React from 'react'
 
-import { PushPreview, PushPreviewTarget, PushPreviewProps } from 'react-push-preview'
-import 'react-push-preview/dist/index.css'
+import { PushPreview, PushPreviewTarget, PushPreviewProps } from './../src'
+import './../src/styles.css';
 
 const ALL_TARGETS: { target: PushPreviewTarget, label: string }[] = [{
     target: 'DeskopFirefox',
@@ -29,7 +29,7 @@ const DEFAULT_PROPS: PushPreviewProps = {
 }
 
 const App = () => {
-    const [previewProps, setPreviewProps] = useState<PushPreviewProps>(DEFAULT_PROPS);
+    const [previewProps, setPreviewProps] = React.useState<PushPreviewProps>(DEFAULT_PROPS);
 
     return (
         <div className='container pt-4'>
