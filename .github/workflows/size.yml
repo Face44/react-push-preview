@@ -1,4 +1,4 @@
-name: Size
+name: CheckSize
 on: [pull_request]
 jobs:
   size:

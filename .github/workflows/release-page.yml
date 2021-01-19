@@ -1,5 +1,5 @@
   
-name: Page
+name: ReleasePage
 on: [push]
 defaults:
   run:
@@ -17,7 +17,7 @@ jobs:
         with:
           version: 12.x
 
-      - name: Build
+      - name: Install dep
         run: yarn install
 
       - name: Build
