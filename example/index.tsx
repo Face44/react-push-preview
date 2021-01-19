@@ -1,7 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.css'
 import './index.css';
 
-import 'react-app-polyfill/ie11';
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
 import App from './App'

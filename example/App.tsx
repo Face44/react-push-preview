@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { useState } from 'react';
 
 import { PushPreview, PushPreviewTarget, PushPreviewProps } from './../src'
 import './../src/styles.css';
@@ -29,7 +30,7 @@ const DEFAULT_PROPS: PushPreviewProps = {
 }
 
 const App = () => {
-    const [previewProps, setPreviewProps] = React.useState<PushPreviewProps>(DEFAULT_PROPS);
+    const [previewProps, setPreviewProps] = useState<PushPreviewProps>(DEFAULT_PROPS);
 
     return (
         <div className='container pt-4'>

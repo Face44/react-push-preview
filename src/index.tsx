@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { useEffect, useState } from 'react';
 
 export type PushPreviewTarget = 'DesktopChrome' | 'DeskopFirefox' | 'DesktopMacOS' | 'MobileAndroid' | 'MobileIOS';
 
@@ -95,10 +96,10 @@ interface ImageProps {
 }
 
 const Image = ({ src, fallbackSrc: fallback, className }: ImageProps) => {
-    const [isLoaded, setIsLoaded] = React.useState(false);
-    const [imageSource, setImageSource] = React.useState(src);
+    const [isLoaded, setIsLoaded] = useState(false);
+    const [imageSource, setImageSource] = useState(src);
 
-    React.useEffect(() => {
+    useEffect(() => {
         setImageSource(src || fallback);
         setIsLoaded(false);
     }, [src, fallback]);

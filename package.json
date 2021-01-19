@@ -20,7 +20,7 @@
     "test": "tsdx test --passWithNoTests"
   },
   "peerDependencies": {
-    "react": ">=16"
+    "react": ">=17"
   },
   "husky": {
     "hooks": {
