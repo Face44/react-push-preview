@@ -1,4 +1,4 @@
-# TSDX React User Guide
+# React Push Preview
 
 Congrats! You just saved yourself hours of work by bootstrapping this project with TSDX. Let’s get you oriented with what’s here and how to use it.
 
