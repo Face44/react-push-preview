@@ -13,10 +13,11 @@
   "scripts": {
     "analyze": "size-limit --why",
     "build": "tsdx build",
+    "deploy": "gh-pages -d example/dist",
     "changeset": "changeset",
     "lint": "tsdx lint",
     "prepare": "tsdx build",
-    "release": "changeset publish",
+    "release": "changeset publish && cd example && npm run build && npm ",
     "size": "size-limit",
     "start": "tsdx watch",
     "test": "tsdx test --passWithNoTests"
