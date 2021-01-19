@@ -85,7 +85,7 @@ const App = () => {
                         <div className='btn-group'>
                             {ALL_TARGETS.map(x => 
                                 <button key={x.target} type='button' className={targetButtonClass(x.target, previewProps.target)}
-                                    onChange={() => setPreviewProps(v => ({ ...v, target: x.target }))}>
+                                    onClick={() => setPreviewProps(v => ({ ...v, target: x.target }))}>
                                     {x.label}
                                 </button>
                             )}
