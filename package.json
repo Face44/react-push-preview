@@ -13,7 +13,6 @@
   "scripts": {
     "analyze": "size-limit --why",
     "build": "tsdx build",
-    "deploy": "gh-pages -d example/dist",
     "changeset": "changeset",
     "lint": "tsdx lint",
     "prepare": "tsdx build",

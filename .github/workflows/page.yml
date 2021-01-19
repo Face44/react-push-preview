@@ -1,6 +1,6 @@
   
 name: Page
-on: [release]
+on: [push]
 defaults:
   run:
     working-directory: ./example
