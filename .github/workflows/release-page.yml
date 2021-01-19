@@ -5,7 +5,7 @@ defaults:
   run:
     working-directory: ./example
 jobs:
-  release:
+  release-page:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2

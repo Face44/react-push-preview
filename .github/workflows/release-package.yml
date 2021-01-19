@@ -1,12 +1,8 @@
   
 name: Release
-on:
-  push:
-    branches:
-      - master
-      - next
+on: [release]
 jobs:
-  release:
+  release-package:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -21,10 +17,7 @@ jobs:
       - name: Install deps and build (with cache)
         uses: bahmutov/npm-install@v1
 
-      - name: Create Release Pull Request or Publish to npm
-        uses: changesets/action@master
-        with:
-          publish: yarn release
+      - name: Publish
+        run: yarn publish
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

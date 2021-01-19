@@ -11,12 +11,10 @@
     "node": ">=10"
   },
   "scripts": {
-    "analyze": "size-limit --why",
     "build": "tsdx build",
-    "changeset": "changeset",
     "lint": "tsdx lint",
+    "lint:size": "size-limit --why",
     "prepare": "tsdx build",
-    "release": "changeset publish && cd example && npm run build && npm ",
     "size": "size-limit",
     "start": "tsdx watch",
     "test": "tsdx test --passWithNoTests"
@@ -49,7 +47,6 @@
     }
   ],
   "devDependencies": {
-    "@changesets/cli": "^2.13.0",
     "@size-limit/preset-small-lib": "^4.9.1",
     "@types/react-dom": "^17.0.0",
     "@types/react": "^17.0.0",
