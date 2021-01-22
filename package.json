@@ -12,7 +12,8 @@
   },
   "scripts": {
     "build": "tsdx build",
-    "lint": "tsdx lint",
+    "lint": "tsdx lint src",
+    "lint:fix": "tsdx lint src --fix",
     "lint:size": "size-limit --why",
     "prepare": "tsdx build",
     "size": "size-limit",

@@ -1,61 +1,72 @@
-import * as React from 'react'
+import * as React from 'react';
 
 interface ImageProps {
-    className?: string;
+  className?: string;
 
-    // The fallback source.
-    fallbackSrc?: string;
+  // The fallback source.
+  fallbackSrc?: string;
 
-    // The source of the image.
-    src?: string;
+  // The source of the image.
+  src?: string;
+
+  // The source of the image.
+  alt?: string;
 }
 
 interface ImageState {
-    // True if loaded.
-    isLoaded: boolean;
+  // True if loaded.
+  isLoaded: boolean;
 
-    // The source of the image.
-    src?: string;
+  // The source of the image.
+  src?: string;
 }
 
 export class Image extends React.PureComponent<ImageProps, ImageState> {
-    constructor(props: ImageProps) {
-        super(props);
+  constructor(props: ImageProps) {
+    super(props);
 
-        const src = props.src || props.fallbackSrc;
+    const src = props.src || props.fallbackSrc;
 
-        this.state = { src, isLoaded: false };
-    }
-    
-    static getDerivedStateFromProps(nextProps: ImageProps, prevState: ImageState) {
-        const src = nextProps.src || nextProps.fallbackSrc;
+    this.state = { src, isLoaded: false };
+  }
 
-        if (src !== prevState.src) {
-            return { src, isLoaded: false };
-        }
-    
-        return null;
-    }
+  static getDerivedStateFromProps(
+    nextProps: ImageProps,
+    prevState: ImageState
+  ) {
+    const src = nextProps.src || nextProps.fallbackSrc;
 
-    private onLoaded = () => {
-        this.setState({ isLoaded: true });
+    if (src !== prevState.src) {
+      return { src, isLoaded: false };
     }
 
-    private onError = () => {
-        const fallback = this.props.fallbackSrc;
+    return null;
+  }
 
-        if (fallback) {
-            this.setState({ src: fallback, isLoaded: false });
-        }
+  private onLoaded = () => {
+    this.setState({ isLoaded: true });
+  };
+
+  private onError = () => {
+    const fallback = this.props.fallbackSrc;
+
+    if (fallback) {
+      this.setState({ src: fallback, isLoaded: false });
     }
+  };
 
-    public render() {
-        const style = this.state.isLoaded ? {} : { display: 'none' };
+  public render() {
+    const style = this.state.isLoaded ? {} : { display: 'none' };
 
-        return (
-            <div className={this.props.className} style={style}>
-                <img src={this.state.src} onLoad={this.onLoaded} onError={this.onError} />
-            </div>
-        );
-    }
+    return (
+      <div className={this.props.className} style={style}>
+        <img
+          alt={this.props.alt}
+          src={this.state.src}
+          onLoad={this.onLoaded}
+          onError={this.onError}
+        />
+      </div>
+    );
+  }
 }

@@ -1,8 +1,8 @@
-import 'bootstrap/dist/css/bootstrap.css'
-import './index.css';
+import "bootstrap/dist/css/bootstrap.css"
+import "./index.css";
 
-import * as React from 'react'
-import * as ReactDOM from 'react-dom'
-import App from './App'
+import * as React from "react"
+import * as ReactDOM from "react-dom"
+import App from "./App"
 
-ReactDOM.render(<App />, document.getElementById('root'))
+ReactDOM.render(<App />, document.getElementById("root"))

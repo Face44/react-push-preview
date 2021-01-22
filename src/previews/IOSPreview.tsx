@@ -1,35 +1,36 @@
-import React, { useState } from 'react';
+import * as React from 'react';
 import { Image } from '../Image';
 import { PushPreviewProps } from '../PushPreviewProps';
 
-export const iOSPreview = (props: PushPreviewProps) => {
-
+export const IOSPreview = (props: PushPreviewProps) => {
   const {
     appName = '',
-    title,
-    message,
-    iconUrl,
     buttons,
+    iconUrl,
     imageUrl,
+    message,
     subTitle,
+    title,
   } = props;
 
-  const [expanded, setExpanded] = useState(false);
+  const [expanded, setExpanded] = React.useState(false);
 
   return (
-    <div className={`test ios ${expanded ? 'expanded' : 'minimum'}`} onClick={() => setExpanded(!expanded)}>
+    <div
+      className={`test ios ${expanded ? 'expanded' : 'minimum'}`}
+      onClick={() => setExpanded(!expanded)}
+    >
       <div className="header">
         <div className="app-meta">
           <Image className="icon" src={iconUrl} fallbackSrc={iconUrl} />
           <span>{appName || 'Your App'}</span>
         </div>
-        <div className={`time ${expanded && 'close-btn'}`}>{!expanded ? 'now' : 'X'}</div>
+        <div className={`time ${expanded && 'close-btn'}`}>
+          {!expanded ? 'now' : 'X'}
+        </div>
       </div>
-      {expanded && (
-          <Image className="image" src={imageUrl} />
-        )}
+      {expanded && <Image className="image" src={imageUrl} />}
       <div className="section">
-        
         <div className="short-description">
           {title && <div className="title">{title}</div>}
           {subTitle && <div className="subtitle">{subTitle}</div>}

@@ -1,43 +1,43 @@
-import * as React from 'react'
-import { useState } from 'react';
+import * as React from "react"
+import { useState } from "react";
 
-import { PushPreview, PushPreviewTarget, PushPreviewProps } from './../src'
-import './../src/styles.scss';
+import { PushPreview, PushPreviewTarget, PushPreviewProps } from "./../src"
+import "./../src/styles.scss";
 
 const ALL_TARGETS: { target: PushPreviewTarget, label: string }[] = [{
-    target: 'Notifo',
-    label: 'Notifo'
+    target: "Notifo",
+    label: "Notifo"
 }, {
-    target: 'DeskopFirefox',
-    label: 'Firefox'
+    target: "DeskopFirefox",
+    label: "Firefox"
 }, {
-    target: 'DesktopChrome',
-    label: 'Chrome'
+    target: "DesktopChrome",
+    label: "Chrome"
 }, {
-    target: 'DesktopMacOS',
-    label: 'MacOS'
+    target: "DesktopMacOS",
+    label: "MacOS"
 }, {
-    target: 'MobileAndroid',
-    label: 'Android'
+    target: "MobileAndroid",
+    label: "Android"
 }, {
-    target: 'MobileIOS',
-    label: 'iOS'
+    target: "MobileIOS",
+    label: "iOS"
 }];
 
 const DEFAULT_PROPS: PushPreviewProps = {
     buttons: [{
-        title: 'Reply'
+        title: "Reply"
     }, {
-        title: 'Ignore'
+        title: "Ignore"
     }, {
-        title: 'Cancel'
+        title: "Cancel"
     }],
-    message: 'Notifo is an awesome tool for all kind of notification messages that are sent through different channels.',
-    iconUrl: 'https://raw.githubusercontent.com/notifo-io/notifo/main/media/logo-square.png',
-    imageUrl: 'https://images.unsplash.com/photo-1434725039720-aaad6dd32dfe?fit=crop&w=600',
-    linkName: 'My Link',
-    target: 'Notifo',
-    title: 'Your Notification'
+    message: "Notifo is an awesome tool for all kind of notification messages that are sent through different channels.",
+    iconUrl: "https://raw.githubusercontent.com/notifo-io/notifo/main/media/logo-square.png",
+    imageUrl: "https://images.unsplash.com/photo-1434725039720-aaad6dd32dfe?fit=crop&w=600",
+    linkName: "My Link",
+    target: "Notifo",
+    title: "Your Notification"
 }
 
 const App = () => {
@@ -63,86 +63,86 @@ const App = () => {
     }
 
     return (
-        <div className='container pt-4'>
+        <div className="container pt-4">
             <h1>Push Preview</h1>
 
-            <div className='row'>
-                <div className='col-5 pt-4'>
-                    <div className='form-group'>
-                        <label htmlFor='appName'>App Name</label>
+            <div className="row">
+                <div className="col-5 pt-4">
+                    <div className="form-group">
+                        <label htmlFor="appName">App Name</label>
 
-                        <input className='form-control' id='appName' value={previewProps.appName || ''}
-                            onChange={ev => setProps('appName', ev.target.value)} />
+                        <input className="form-control" id="appName" value={previewProps.appName || ""}
+                            onChange={ev => setProps("appName", ev.target.value)} />
                     </div>
 
-                    <div className='form-group'>
-                        <label htmlFor='subTitle'>Sub Title (iOS only)</label>
+                    <div className="form-group">
+                        <label htmlFor="subTitle">Sub Title (iOS only)</label>
 
-                        <input className='form-control' id='subTitle' value={previewProps.subTitle || ''}
-                            onChange={ev => setProps('subTitle', ev.target.value)} />
+                        <input className="form-control" id="subTitle" value={previewProps.subTitle || ""}
+                            onChange={ev => setProps("subTitle", ev.target.value)} />
                     </div>
 
-                    <div className='form-group'>
-                        <label htmlFor='title'>Title</label>
+                    <div className="form-group">
+                        <label htmlFor="title">Title</label>
 
-                        <input className='form-control' id='title' value={previewProps.title || ''}
-                            onChange={ev => setProps('title', ev.target.value)} />
+                        <input className="form-control" id="title" value={previewProps.title || ""}
+                            onChange={ev => setProps("title", ev.target.value)} />
                     </div>
 
-                    <div className='form-group'>
-                        <label htmlFor='message'>Message</label>
+                    <div className="form-group">
+                        <label htmlFor="message">Message</label>
 
-                        <textarea className='form-control' id='message' value={previewProps.message || ''}
-                            onChange={ev => setProps('message', ev.target.value)} />
+                        <textarea className="form-control" id="message" value={previewProps.message || ""}
+                            onChange={ev => setProps("message", ev.target.value)} />
                     </div>
 
-                    <div className='form-group'>
-                        <label htmlFor='iconUrl'>Icon URL</label>
+                    <div className="form-group">
+                        <label htmlFor="iconUrl">Icon URL</label>
 
-                        <input className='form-control' id='iconUrl' value={previewProps.iconUrl || ''}
-                            onChange={ev => setProps('iconUrl', ev.target.value)} />
+                        <input className="form-control" id="iconUrl" value={previewProps.iconUrl || ""}
+                            onChange={ev => setProps("iconUrl", ev.target.value)} />
                     </div>
 
-                    <div className='form-group'>
-                        <label htmlFor='linkName'>Link Name</label>
+                    <div className="form-group">
+                        <label htmlFor="linkName">Link Name</label>
 
-                        <input className='form-control' id='imageUrl' value={previewProps.linkName || ''}
-                            onChange={ev => setProps('linkName', ev.target.value)} />
+                        <input className="form-control" id="imageUrl" value={previewProps.linkName || ""}
+                            onChange={ev => setProps("linkName", ev.target.value)} />
                     </div>
 
-                    <div className='form-group'>
-                        <label htmlFor='imageUrl'>Image URL</label>
+                    <div className="form-group">
+                        <label htmlFor="imageUrl">Image URL</label>
 
-                        <input className='form-control' id='imageUrl' value={previewProps.imageUrl || ''}
-                            onChange={ev => setProps('imageUrl', ev.target.value)} />
+                        <input className="form-control" id="imageUrl" value={previewProps.imageUrl || ""}
+                            onChange={ev => setProps("imageUrl", ev.target.value)} />
                     </div>
 
-                    <div className='form-group'>
-                        <label htmlFor='button1'>Button 1</label>
+                    <div className="form-group">
+                        <label htmlFor="button1">Button 1</label>
 
-                        <input className='form-control' id='button1' value={previewProps.buttons?.[0].title || ''}
+                        <input className="form-control" id="button1" value={previewProps.buttons?.[0].title || ""}
                             onChange={ev => setButton(0, ev.target.value)} />
                     </div>
 
-                    <div className='form-group'>
-                        <label htmlFor='button2'>Button 2</label>
+                    <div className="form-group">
+                        <label htmlFor="button2">Button 2</label>
 
-                        <input className='form-control' id='button2' value={previewProps.buttons?.[1].title || ''}
+                        <input className="form-control" id="button2" value={previewProps.buttons?.[1].title || ""}
                             onChange={ev => setButton(1, ev.target.value)} />
                     </div>
 
-                    <div className='form-group'>
-                        <label htmlFor='button3'>Button 3</label>
+                    <div className="form-group">
+                        <label htmlFor="button3">Button 3</label>
 
-                        <input className='form-control' id='button3' value={previewProps.buttons?.[2].title || ''}
+                        <input className="form-control" id="button3" value={previewProps.buttons?.[2].title || ""}
                             onChange={ev => setButton(2, ev.target.value)} />
                     </div>
                 </div>
-                <div className='col-7'>
-                    <div className='mb-4 text-center'>
-                        <div className='btn-group'>
+                <div className="col-7">
+                    <div className="mb-4 text-center">
+                        <div className="btn-group">
                             {ALL_TARGETS.map(x => 
-                                <button key={x.target} type='button' className={targetButtonClass(x.target, previewProps.target)}
+                                <button key={x.target} type="button" className={targetButtonClass(x.target, previewProps.target)}
                                     onClick={() => setPreviewProps(v => ({ ...v, target: x.target }))}>
                                     {x.label}
                                 </button>
@@ -158,10 +158,10 @@ const App = () => {
 }
 
 function targetButtonClass(target: PushPreviewTarget, currentTarget?: PushPreviewTarget) {
-    let clazz = 'btn btn-outline-primary';
+    let clazz = "btn btn-outline-primary";
 
     if (target === currentTarget) {
-        clazz += ' active';
+        clazz += " active";
     }
 
     return clazz;
