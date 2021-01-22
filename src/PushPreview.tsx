@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Image } from './Image';
+import {iOS as MobileIOS}  from './previews/ios'
 
 export type PushPreviewTarget = 'DesktopChrome' | 'DeskopFirefox' | 'DesktopMacOS' | 'MobileAndroid' | 'MobileIOS';
 
@@ -26,6 +26,8 @@ export interface PushPreviewProps {
     imageUrl?: string;
 
     buttons?: readonly PushPreviewButton[];
+
+    expanded?: boolean;
 }
 
 interface PushPreviewButton {
@@ -39,50 +41,11 @@ interface PushPreviewButton {
 const DEFAULT_LOGO = 'https://raw.githubusercontent.com/notifo-io/notifo/main/media/logo-square.png';
 
 export const PushPreview = (props: PushPreviewProps) => {
-    const {
-        appName = '',
-        title,
-        message,
-        iconUrl,
-        buttons,
-        imageUrl,
-        subTitle,
-    } = props;
-
+    if (!props.imageUrl) props.imageUrl = DEFAULT_LOGO
     return (
-        <div className='test'>
-            <Image className='image' src={imageUrl} />
-
-
-            <div>
-                <Image className='icon' src={iconUrl} fallbackSrc={DEFAULT_LOGO} />
-                
-                <span>{appName || 'Your App'}</span>
-            </div>
-
-            {title &&
-                <div>{title}</div>
-            }
-
-            {subTitle &&
-                <div>{subTitle}</div>
-            }
-
-            {message &&
-                <div>{message}</div>
-            }
-
-            {buttons &&
-                <div>
-                    {buttons.map((button, i) => 
-                        <div key={i}>
-                            <Image src={button.iconUrl} />
-
-                            {button.title}
-                        </div>
-                    )}
-                </div>
-            }
+        <div className="preview-container">
+            {props.target == 'MobileIOS' && <MobileIOS fields={props} />}
         </div>
+        
     );
 }

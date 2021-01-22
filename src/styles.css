@@ -1,16 +1,94 @@
 /* add css module styles here (optional) */
 
+.preview-container{
+    background: #f7f7f7;
+    padding: 2em;
+}
 .test {
-    margin: 2em;
+    margin: 2em auto;
     padding: 0.5em;
     border: 1px solid #000;
     font-size: 1em;
+    width: 360px;
+  }
+
+  .ios{
+      background: #ffffff;
+      border-radius: 13px;
+      padding: 0;
+      border: none;
+      box-shadow: rgb(212, 212, 213) 0px 1px 3px 0px;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  .ios .header{
+      color: #838383;
+      font-size: 16px;
+      padding: 10px 10px 8px;
+  }
+  .ios.expanded .header{
+      font-size: 13px;
+      align-items: center;
+  }
+  .ios .close-btn{
+      transform: scale(1.3, 1);
+      font-size: 16px;
+      font-weight: normal;
+      cursor: pointer;
+  }
+  .ios .section{
+      padding: 14px;
+  }
+  .ios .title{
+      margin-bottom: 4px;
+  }
+
+  .header{
+      display: flex;
+      justify-content: space-between;
+  }
+  .header > *{
+      display: flex;
+  }
+  .section{
+      display: flex;
+      justify-content: space-between;
+  }
+  .section > *{
+      display: flex;
+  }
+  .short-description{
+      flex-direction: column;
+      font-size: 15px;
+      max-width: calc(100% - 50px);
+  }
+  .short-description .title, .short-description .subtitle{
+      line-height: 20px;
+      font-weight: bold;
+  }
+  .short-description .message{
+      line-height: 18px;
+  }
+
+  .image{
+      flex: 1;
   }
   
   .image img {
       max-width: 100%;
   }
-  
+
+  .image-preview-small{
+      width: 36px;
+      height: 36px;
+      min-width: 36px;
+    }
+    .image-preview-small img{
+        width: 100%;
+        height: 100%;
+        border-radius: 4px;
+  }
+
   .icon {
       margin-right: 5px;
       display: inline-block;
