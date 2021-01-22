@@ -25,7 +25,7 @@ const DEFAULT_PROPS: PushPreviewProps = {
     message: 'Your Notification Message',
     iconUrl: 'https://raw.githubusercontent.com/notifo-io/notifo/main/media/logo-square.png',
     imageUrl: 'https://images.unsplash.com/photo-1434725039720-aaad6dd32dfe?fit=crop&w=600',
-    target: 'DesktopChrome',
+    target: 'MobileIOS',
     title: 'Your Notification',
 }
 
