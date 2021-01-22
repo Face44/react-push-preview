@@ -1,0 +1,52 @@
+// sass-lint:disable no-vendor-prefixes, one-declaration-per-line, no-misspelled-properties, no-color-keywords, no-color-literals
+
+@mixin scrollbars($size, $foreground-color, $background-color: mix($foreground-color, white, 50%)) {
+    &::-webkit-scrollbar {
+        height: $size;
+        width:  $size;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: $foreground-color;
+    }
+
+    &::-webkit-scrollbar-corner,
+    &::-webkit-scrollbar-track {
+        background: $background-color;
+    }
+
+    & {
+        scrollbar-color: $foreground-color $background-color;
+        scrollbar-face-color: $foreground-color;
+        scrollbar-track-color: $background-color;
+        scrollbar-width: thin;
+    }
+}
+
+@mixin size($w, $h) {
+    display: inline-block;
+    height: $h;
+    max-height: $h;
+    max-width: $w;
+    min-height: $h;
+    min-width: $w;
+    width: $w;
+}
+
+@mixin middle {
+    vertical-align: middle;
+}
+
+@mixin position($t: null, $r: null, $b: null, $l: null) {
+    bottom: $b; left: $l; right: $r; top: $t;
+}
+
+@mixin absolute($t: null, $r: null, $b: null, $l: null) {
+    @include position($t, $r, $b, $l);
+    position: absolute;
+}
+
+@mixin fixed($t: null, $r: null, $b: null, $l: null) {
+    @include position($t, $r, $b, $l);
+    position: fixed;
+}

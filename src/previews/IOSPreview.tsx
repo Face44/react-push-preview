@@ -1,12 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Image } from '../Image';
+import { PushPreviewProps } from '../PushPreviewProps';
 
-interface Props {
-  fields: any;
-}
-interface State {}
+export const iOSPreview = (props: PushPreviewProps) => {
 
-export const iOS = (props: any) => {
   const {
     appName = '',
     title,
@@ -14,11 +11,13 @@ export const iOS = (props: any) => {
     iconUrl,
     buttons,
     imageUrl,
-    expanded,
     subTitle,
-  } = props.fields;
+  } = props;
+
+  const [expanded, setExpanded] = useState(false);
+
   return (
-    <div className={`test ios ${expanded ? 'expanded' : 'minimum'}`}>
+    <div className={`test ios ${expanded ? 'expanded' : 'minimum'}`} onClick={() => setExpanded(!expanded)}>
       <div className="header">
         <div className="app-meta">
           <Image className="icon" src={iconUrl} fallbackSrc={iconUrl} />

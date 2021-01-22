@@ -2,9 +2,12 @@ import * as React from 'react'
 import { useState } from 'react';
 
 import { PushPreview, PushPreviewTarget, PushPreviewProps } from './../src'
-import './../src/styles.css';
+import './../src/styles.scss';
 
 const ALL_TARGETS: { target: PushPreviewTarget, label: string }[] = [{
+    target: 'Notifo',
+    label: 'Notifo'
+}, {
     target: 'DeskopFirefox',
     label: 'Firefox'
 }, {
@@ -22,16 +25,42 @@ const ALL_TARGETS: { target: PushPreviewTarget, label: string }[] = [{
 }];
 
 const DEFAULT_PROPS: PushPreviewProps = {
-    message: 'Your Notification Message',
+    buttons: [{
+        title: 'Reply'
+    }, {
+        title: 'Ignore'
+    }, {
+        title: 'Cancel'
+    }],
+    message: 'Notifo is an awesome tool for all kind of notification messages that are sent through different channels.',
     iconUrl: 'https://raw.githubusercontent.com/notifo-io/notifo/main/media/logo-square.png',
     imageUrl: 'https://images.unsplash.com/photo-1434725039720-aaad6dd32dfe?fit=crop&w=600',
-    target: 'MobileIOS',
-    title: 'Your Notification',
-    expanded: false
+    linkName: 'My Link',
+    target: 'Notifo',
+    title: 'Your Notification'
 }
 
 const App = () => {
     const [previewProps, setPreviewProps] = useState<PushPreviewProps>(DEFAULT_PROPS);
+
+    const setProps = (property: keyof PushPreviewProps, value: any) => {
+        const props = { ...previewProps };
+
+        props[property] = value;
+
+        setPreviewProps(props);
+    }
+
+    const setButton = (index: number, title: string) => {
+        const props = { ...previewProps };
+
+        if (props.buttons) {
+            props.buttons = [...props.buttons];
+            props.buttons[index] = { title };
+        }
+
+        setPreviewProps(props);
+    }
 
     return (
         <div className='container pt-4'>
@@ -43,49 +72,70 @@ const App = () => {
                         <label htmlFor='appName'>App Name</label>
 
                         <input className='form-control' id='appName' value={previewProps.appName || ''}
-                            onChange={ev => setPreviewProps(v => ({ ...v, appName: ev.target.value }))} />
+                            onChange={ev => setProps('appName', ev.target.value)} />
                     </div>
 
                     <div className='form-group'>
                         <label htmlFor='subTitle'>Sub Title (iOS only)</label>
 
                         <input className='form-control' id='subTitle' value={previewProps.subTitle || ''}
-                            onChange={ev => setPreviewProps(v => ({ ...v, subTitle: ev.target.value }))} />
+                            onChange={ev => setProps('subTitle', ev.target.value)} />
                     </div>
 
                     <div className='form-group'>
                         <label htmlFor='title'>Title</label>
 
                         <input className='form-control' id='title' value={previewProps.title || ''}
-                            onChange={ev => setPreviewProps(v => ({ ...v, title: ev.target.value }))} />
+                            onChange={ev => setProps('title', ev.target.value)} />
                     </div>
 
                     <div className='form-group'>
                         <label htmlFor='message'>Message</label>
 
                         <textarea className='form-control' id='message' value={previewProps.message || ''}
-                            onChange={ev => setPreviewProps(v => ({ ...v, message: ev.target.value }))} />
+                            onChange={ev => setProps('message', ev.target.value)} />
                     </div>
 
                     <div className='form-group'>
                         <label htmlFor='iconUrl'>Icon URL</label>
 
                         <input className='form-control' id='iconUrl' value={previewProps.iconUrl || ''}
-                            onChange={ev => setPreviewProps(v => ({ ...v, iconUrl: ev.target.value }))} />
+                            onChange={ev => setProps('iconUrl', ev.target.value)} />
+                    </div>
+
+                    <div className='form-group'>
+                        <label htmlFor='linkName'>Link Name</label>
+
+                        <input className='form-control' id='imageUrl' value={previewProps.linkName || ''}
+                            onChange={ev => setProps('linkName', ev.target.value)} />
                     </div>
 
                     <div className='form-group'>
                         <label htmlFor='imageUrl'>Image URL</label>
 
                         <input className='form-control' id='imageUrl' value={previewProps.imageUrl || ''}
-                            onChange={ev => setPreviewProps(v => ({ ...v, imageUrl: ev.target.value }))} />
+                            onChange={ev => setProps('imageUrl', ev.target.value)} />
                     </div>
 
                     <div className='form-group'>
-                        <label htmlFor='expanded'>Expanded</label>
+                        <label htmlFor='button1'>Button 1</label>
 
-                        <input type="checkbox" className='form-control' id='expanded' checked={previewProps.expanded || false}
-                            onChange={ev => setPreviewProps(v => ({ ...v, expanded: ev.target.checked }))} />
+                        <input className='form-control' id='button1' value={previewProps.buttons?.[0].title || ''}
+                            onChange={ev => setButton(0, ev.target.value)} />
+                    </div>
+
+                    <div className='form-group'>
+                        <label htmlFor='button2'>Button 2</label>
+
+                        <input className='form-control' id='button2' value={previewProps.buttons?.[1].title || ''}
+                            onChange={ev => setButton(1, ev.target.value)} />
+                    </div>
+
+                    <div className='form-group'>
+                        <label htmlFor='button3'>Button 3</label>
+
+                        <input className='form-control' id='button3' value={previewProps.buttons?.[2].title || ''}
+                            onChange={ev => setButton(2, ev.target.value)} />
                     </div>
                 </div>
                 <div className='col-7'>
