@@ -27,6 +27,7 @@ const DEFAULT_PROPS: PushPreviewProps = {
     imageUrl: 'https://images.unsplash.com/photo-1434725039720-aaad6dd32dfe?fit=crop&w=600',
     target: 'MobileIOS',
     title: 'Your Notification',
+    expanded: false
 }
 
 const App = () => {
@@ -78,6 +79,13 @@ const App = () => {
 
                         <input className='form-control' id='imageUrl' value={previewProps.imageUrl || ''}
                             onChange={ev => setPreviewProps(v => ({ ...v, imageUrl: ev.target.value }))} />
+                    </div>
+
+                    <div className='form-group'>
+                        <label htmlFor='expanded'>Expanded</label>
+
+                        <input type="checkbox" className='form-control' id='expanded' checked={previewProps.expanded || false}
+                            onChange={ev => setPreviewProps(v => ({ ...v, expanded: ev.target.checked }))} />
                     </div>
                 </div>
                 <div className='col-7'>
