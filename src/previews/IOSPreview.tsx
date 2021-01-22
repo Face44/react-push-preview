@@ -2,23 +2,25 @@ import * as React from 'react';
 import { Image } from '../Image';
 import { PushPreviewProps } from '../PushPreviewProps';
 
-export const IOSPreview = (props: PushPreviewProps) => {
+export const IOSPreview = (
+  props: PushPreviewProps & { expanded: boolean; toggle: () => void }
+) => {
   const {
     appName = '',
     buttons,
+    expanded,
     iconUrl,
     imageUrl,
     message,
     subTitle,
     title,
+    toggle,
   } = props;
-
-  const [expanded, setExpanded] = React.useState(false);
 
   return (
     <div
       className={`test ios ${expanded ? 'expanded' : 'minimum'}`}
-      onClick={() => setExpanded(!expanded)}
+      onClick={toggle}
     >
       <div className="header">
         <div className="app-meta">

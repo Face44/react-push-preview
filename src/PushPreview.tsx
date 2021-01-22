@@ -6,16 +6,39 @@ import { PushPreviewProps } from './PushPreviewProps';
 const DEFAULT_LOGO =
   'https://raw.githubusercontent.com/notifo-io/notifo/main/media/logo-square.png';
 
-export const PushPreview = (props: PushPreviewProps) => {
-  if (!props.imageUrl) {
-    props.imageUrl = DEFAULT_LOGO;
+interface State {
+  isExpanded: boolean;
+}
+
+export class PushPreview extends React.Component<PushPreviewProps, State> {
+  constructor(props: PushPreviewProps) {
+    super(props);
+
+    this.state = { isExpanded: false };
   }
 
-  return (
-    <div className="preview-container">
-      {props.target === 'MobileIOS' && <IOSPreview {...props} />}
+  public toggle = () => {
+    this.setState(s => ({ isExpanded: !s.isExpanded }));
+  };
 
-      {props.target === 'Notifo' && <NotifoPreview {...props} />}
-    </div>
-  );
-};
+  public render() {
+    const { imageUrl, target, ...other } = this.props;
+
+    const url = imageUrl || DEFAULT_LOGO;
+
+    return (
+      <div className="preview-container">
+        {target === 'MobileIOS' && (
+          <IOSPreview
+            {...other}
+            imageUrl={url}
+            expanded={this.state.isExpanded}
+            toggle={this.toggle}
+          />
+        )}
+
+        {target === 'Notifo' && <NotifoPreview {...other} imageUrl={url} />}
+      </div>
+    );
+  }
+}
