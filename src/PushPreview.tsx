@@ -10,6 +10,7 @@ interface State {
   isExpanded: boolean;
 }
 
+// I had issues with hooks, therefor I use class component here.
 export class PushPreview extends React.Component<PushPreviewProps, State> {
   constructor(props: PushPreviewProps) {
     super(props);
