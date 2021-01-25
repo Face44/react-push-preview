@@ -1,6 +1,6 @@
   
 name: Release Package
-on: [release]
+on: [tag]
 jobs:
   release-package:
     runs-on: ubuntu-latest
