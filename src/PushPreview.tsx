@@ -24,16 +24,16 @@ export class PushPreview extends React.Component<PushPreviewProps, State> {
   };
 
   public render() {
-    const { imageUrl, target, ...other } = this.props;
+    const { iconUrl, target, ...other } = this.props;
 
-    const url = imageUrl || DEFAULT_LOGO;
+    const url = iconUrl || DEFAULT_LOGO;
 
     return (
       <div className="preview-container">
         {target === 'MobileIOS' && (
           <IOSPreview
             {...other}
-            imageUrl={url}
+            iconUrl={url}
             expanded={this.state.isExpanded}
             toggle={this.toggle}
           />
@@ -42,13 +42,13 @@ export class PushPreview extends React.Component<PushPreviewProps, State> {
         {target === 'MobileAndroid' && (
           <AndroidPreview
             {...other}
-            imageUrl={url}
+            iconUrl={url}
             expanded={this.state.isExpanded}
             toggle={this.toggle}
           />
         )}
 
-        {target === 'Notifo' && <NotifoPreview {...other} imageUrl={url} />}
+        {target === 'Notifo' && <NotifoPreview {...other} iconUrl={url} />}
       </div>
     );
   }
