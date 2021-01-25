@@ -1,12 +1,14 @@
 /* add css module styles here (optional) */
 
-.preview-container{
-    background: #f7f7f7;
-    padding: 2em;
+.preview-container {
+  background: #f7f7f7;
+  padding: 2em;
+  > * {
+    margin: 2em auto;
+  }
 }
 
 .preview-container {
-    // Import here to avoid conflicts.
-    @import './previews/Notifo.scss';
-    @import './previews/IOS.scss';
+  // Import here to avoid conflicts.
+  @import './previews/Notifo.scss';
 }
