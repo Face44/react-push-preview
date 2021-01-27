@@ -15,6 +15,7 @@ export const AndroidPreview = (
     imageUrl,
     message,
     subTitle,
+    iconUrl,
     title,
     toggle,
   } = props;
@@ -43,7 +44,7 @@ export const AndroidPreview = (
           </div>
           {!expanded && (
             <div className="image-preview-small">
-              <Image src={imageUrl} />
+              <Image src={iconUrl} />
             </div>
           )}
           {expanded && <Image className="image" src={imageUrl} />}
