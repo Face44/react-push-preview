@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { IOSPreview } from './previews/IOSPreview';
+import { DesktopMacOS } from './previews/DesktopMacOS';
 import { AndroidPreview } from './previews/AndroidPreview';
 import { NotifoPreview } from './previews/NotifoPreview';
 import { PushPreviewProps } from './PushPreviewProps';
@@ -41,6 +42,15 @@ export class PushPreview extends React.Component<PushPreviewProps, State> {
 
         {target === 'MobileAndroid' && (
           <AndroidPreview
+            {...other}
+            iconUrl={url}
+            expanded={this.state.isExpanded}
+            toggle={this.toggle}
+          />
+        )}
+
+        {target === 'DesktopMacOS' && (
+          <DesktopMacOS
             {...other}
             iconUrl={url}
             expanded={this.state.isExpanded}
