@@ -11,4 +11,7 @@
 .preview-container {
   // Import here to avoid conflicts.
   @import './previews/Notifo.scss';
+  @import './previews/IOSPreview.scss';
+  @import './previews/AndroidPreview.scss';
+  @import './previews/DesktopMacOS.scss';
 }
