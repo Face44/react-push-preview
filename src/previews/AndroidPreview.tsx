@@ -28,7 +28,6 @@ export const AndroidPreview = (
       <div className="main">
         <div className="header">
           <div className="app-meta">
-            {/* <Image className="icon" src={iconUrl} fallbackSrc={iconUrl} /> */}
             <BellIcon />
             <span className="app-name">{appName || 'Your App'}</span>
             <span className={`arrow-icon`}>

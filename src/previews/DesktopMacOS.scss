@@ -1,21 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+$width-of-preview:      29.5rem;
+$font-family:           Roboto, 'Open Sans', Arial, Helvetica, sans-serif;
+$color-background:      #f0f0f0;
+$color-white:           #ffffff;
+$color-black:           #000000;
+$color-text:            #4d4d4d;
 
 .desktop-macos {
-  color: #000000;
-  font-family: Roboto, 'Open Sans', Arial, Helvetica, sans-serif;
+  color: $color-black;
+  font-family: $font-family;
   font-weight: 300;
-  width: 472px;
-  border-radius: 8px;
+  width: $width-of-preview;
+  border-radius: .5rem;
   .main {
     display: flex;
-    background: #f0f0f0;
-    color: #4d4d4d;
-    line-height: 22px;
-    border-radius: 13px;
+    background: $color-background;
+    color: $color-text;
+    line-height: 1.375rem;
+    border-radius: .8125rem;
     padding: 0;
     border: none;
-    box-shadow: rgba(0, 0, 0, .14) 0px 3px 13px 1px,
-      rgba(0, 0, 0, .2) 0px 3px 1px -2px, rgba(0, 0, 0, .12) 0px 1px 5px 0px;
+    box-shadow: rgba(0, 0, 0, .14) 0rem .1875rem .8125rem .0625rem,
+      rgba(0, 0, 0, .2) 0rem .1875rem .0625rem -.125rem, rgba(0, 0, 0, .12) 0rem .0625rem .3125rem 0rem;
     cursor: pointer;
 
     > * {
@@ -24,10 +30,10 @@
       justify-content: center;
     }
     .icon-container {
-      padding-left: 10px;
-      width: 65px;
+      padding-left: .625rem;
+      width: 4.0625rem;
       .chrome {
-        width: 50px;
+        width: 3.125rem;
       }
     }
 
@@ -35,30 +41,30 @@
       flex-direction: column;
       align-items: flex-start;
       flex: 1;
-      padding: 12px 8px;
-      letter-spacing: .5px;
+      padding: .75rem .5rem;
+      letter-spacing: .03125rem;
       > * {
         text-overflow: ellipsis;
         overflow: hidden;
         white-space: nowrap;
-        max-width: 300px;
+        max-width: 18.75rem;
       }
       .title {
-        font-size: 19.5px;
+        font-size: 1.21875rem;
         font-weight: 500;
       }
       .site {
-        font-size: 18.7px;
-        letter-spacing: .4px;
+        font-size: 1.16875rem;
+        letter-spacing: .025rem;
       }
       .message {
-        font-size: 18.2px;
+        font-size: 1.1375rem;
       }
     }
 
     .app-logo-container {
-      width: 90px;
-      padding: 10px;
+      width: 5.625rem;
+      padding: .625rem;
       img {
         width: 100%;
       }
@@ -71,28 +77,12 @@
 
   &.expanded {
     .header {
-      font-size: 13px;
+      font-size: .8125rem;
       align-items: center;
-      padding: 14px;
+      padding: .875rem;
     }
     .section {
-      padding: 14px;
-    }
-  }
-  .buttons {
-    box-shadow: rgb(212, 212, 213) 0px 1px 3px 0px;
-    border-radius: 13px;
-    background: #ffffff4d;
-    text-align: center;
-    margin-top: 10px;
-    .button {
-      color: #333333;
-      cursor: pointer;
-      padding: 15px 0;
-      border-bottom: 1px solid #dddddd;
-      &:last-child {
-        border: none;
-      }
+      padding: .875rem;
     }
   }
 }

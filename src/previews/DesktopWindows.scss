@@ -1,10 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+$width-of-preview:        25.5625rem;
+$font-family:             'Open Sans', sans-serif;
+$color-background:        #202020;
+$color-background-button: #434343;
+$color-white:             #ffffff;
+$color-text:              #a7a7a7;
 
 .desktop-windows {
-  width: 409px;
-  font-family: 'Open Sans', sans-serif;
-  background: #202020;
-  color: #ffffff;
+  width: $width-of-preview;
+  font-family: $font-family;
+  background: $color-background;
+  color: $color-white;
   .image {
     width: 100%;
     img {
@@ -17,54 +23,54 @@
     }
   }
   .section {
-    padding: 26px 18px;
+    padding: 1.625rem 1.125rem;
     display: flex;
     position: relative;
     .next-arrow {
       display: none;
       position: absolute;
-      top: 14px;
-      right: 14px;
-      width: 23px;
+      top: 0.875rem;
+      right: 0.875rem;
+      width: 1.4375rem;
     }
     .icon {
-      width: 55px;
+      width: 3.4375rem;
     }
     .content {
-      width: calc(100% - 90px);
-      margin-left: 18px;
-      font-size: 17.1px;
-      line-height: 22.85px;
+      width: calc(100% - 5.625rem);
+      margin-left: 1.125rem;
+      font-size: 1.06875rem;
+      line-height: 1.428125rem;
       .title {
         overflow: hidden;
-        letter-spacing: .1px;
+        letter-spacing: 0.00625rem;
         max-width: 100%;
-        max-height: 40px;
+        max-height: 2.5rem;
       }
       .message {
         overflow: hidden;
-        max-height: 66px;
-        color: #a7a7a7;
+        max-height: 4.125rem;
+        color: $color-text;
       }
       .site-meta {
-        font-size: 13.5px;
-        color: #a7a7a7;
-        margin-top: 10px;
+        font-size: 0.84375rem;
+        color: $color-text;
+        margin-top: 0.625rem;
       }
     }
   }
   .buttons {
-    padding: 0px 18px 26px;
+    padding: 0rem 1.125rem 1.625rem;
     display: flex;
     justify-content: space-between;
     flex-direction: row;
     .button {
       display: flex;
-      background: #434343;
-      padding: 10px 0;
+      background: $color-background-button;
+      padding: 0.625rem 0;
       flex: 1;
       justify-content: center;
-      margin: 3px;
+      margin: 0.1875rem;
       cursor: pointer;
       &:first-child {
         margin-left: 0;
