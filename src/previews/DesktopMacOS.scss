@@ -1,88 +1,101 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-$width-of-preview:      29.5rem;
-$font-family:           Roboto, 'Open Sans', Arial, Helvetica, sans-serif;
-$color-background:      #f0f0f0;
-$color-white:           #ffffff;
-$color-black:           #000000;
-$color-text:            #4d4d4d;
+$width-of-preview: 29.5rem;
+$font-family: Roboto, 'Open Sans', Arial, Helvetica, sans-serif;
+$color-background: #f0f0f0;
+$color-white: #fff;
+$color-black: #000;
+$color-text: #4d4d4d;
+$color-shadow-1: #00000024;
+$color-shadow-2: #00000033;
+$color-shadow-3: #0000001f;
 
 .desktop-macos {
+  border-radius: 0.5rem;
   color: $color-black;
   font-family: $font-family;
   font-weight: 300;
   width: $width-of-preview;
-  border-radius: .5rem;
+
   .main {
-    display: flex;
     background: $color-background;
+    border: 0;
+    border-radius: 0.8125rem;
+    box-shadow: $color-shadow-1 0 0.1875rem 0.8125rem 0.0625rem, $color-shadow-2 0 0.1875rem 0.0625rem -0.125rem, $color-shadow-3 0 0.0625rem 0.3125rem 0;
     color: $color-text;
-    line-height: 1.375rem;
-    border-radius: .8125rem;
-    padding: 0;
-    border: none;
-    box-shadow: rgba(0, 0, 0, .14) 0rem .1875rem .8125rem .0625rem,
-      rgba(0, 0, 0, .2) 0rem .1875rem .0625rem -.125rem, rgba(0, 0, 0, .12) 0rem .0625rem .3125rem 0rem;
     cursor: pointer;
+    display: flex;
+    line-height: 1.375rem;
+    padding: 0;
 
     > * {
-      display: flex;
       align-items: center;
+      display: flex;
       justify-content: center;
     }
+
     .icon-container {
-      padding-left: .625rem;
+      padding-left: 0.625rem;
       width: 4.0625rem;
+
       .chrome {
         width: 3.125rem;
       }
     }
 
     .content-container {
-      flex-direction: column;
       align-items: flex-start;
       flex: 1;
-      padding: .75rem .5rem;
-      letter-spacing: .03125rem;
+      flex-direction: column;
+      letter-spacing: 0.03125rem;
+      padding: 0.75rem 0.5rem;
+
       > * {
-        text-overflow: ellipsis;
-        overflow: hidden;
-        white-space: nowrap;
         max-width: 18.75rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
       }
+
       .title {
         font-size: 1.21875rem;
         font-weight: 500;
       }
+
       .site {
         font-size: 1.16875rem;
-        letter-spacing: .025rem;
+        letter-spacing: 0.025rem;
       }
+
       .message {
         font-size: 1.1375rem;
       }
     }
 
     .app-logo-container {
+      padding: 0.625rem;
       width: 5.625rem;
-      padding: .625rem;
+
       img {
         width: 100%;
       }
     }
 
-    .icon img {
-      width: 100%;
+    .icon {
+      img {
+        width: 100%;
+      }
     }
   }
 
   &.expanded {
     .header {
-      font-size: .8125rem;
       align-items: center;
-      padding: .875rem;
+      font-size: 0.8125rem;
+      padding: 0.875rem;
     }
+
     .section {
-      padding: .875rem;
+      padding: 0.875rem;
     }
   }
 }

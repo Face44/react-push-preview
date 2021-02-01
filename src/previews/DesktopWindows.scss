@@ -1,80 +1,96 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
-$width-of-preview:        25.5625rem;
-$font-family:             'Open Sans', sans-serif;
-$color-background:        #202020;
+$width-of-preview: 25.5625rem;
+$font-family: 'Open Sans', sans-serif;
+$color-background: #202020;
 $color-background-button: #434343;
-$color-white:             #ffffff;
-$color-text:              #a7a7a7;
+$color-white: #fff;
+$color-text: #a7a7a7;
 
 .desktop-windows {
-  width: $width-of-preview;
-  font-family: $font-family;
   background: $color-background;
   color: $color-white;
+  font-family: $font-family;
+  width: $width-of-preview;
+
   .image {
     width: 100%;
+
     img {
       width: 100%;
     }
   }
+
   &:hover {
-    svg.next-arrow {
-      display: block;
+    svg {
+      &.next-arrow {
+        display: block;
+      }
     }
   }
+
   .section {
-    padding: 1.625rem 1.125rem;
     display: flex;
+    padding: 1.625rem 1.125rem;
     position: relative;
+
     .next-arrow {
       display: none;
       position: absolute;
-      top: 0.875rem;
       right: 0.875rem;
+      top: 0.875rem;
       width: 1.4375rem;
     }
+
     .icon {
       width: 3.4375rem;
     }
+
     .content {
-      width: calc(100% - 5.625rem);
-      margin-left: 1.125rem;
       font-size: 1.06875rem;
       line-height: 1.428125rem;
+      margin-left: 1.125rem;
+      width: calc(100% - 5.625rem);
+
       .title {
-        overflow: hidden;
         letter-spacing: 0.00625rem;
-        max-width: 100%;
         max-height: 2.5rem;
-      }
-      .message {
+        max-width: 100%;
         overflow: hidden;
-        max-height: 4.125rem;
-        color: $color-text;
       }
-      .site-meta {
-        font-size: 0.84375rem;
+
+      .message {
         color: $color-text;
+        max-height: 4.125rem;
+        overflow: hidden;
+      }
+
+      .site-meta {
+        color: $color-text;
+        font-size: 0.84375rem;
         margin-top: 0.625rem;
       }
     }
   }
+
   .buttons {
-    padding: 0rem 1.125rem 1.625rem;
     display: flex;
-    justify-content: space-between;
     flex-direction: row;
+    justify-content: space-between;
+    padding: 0 1.125rem 1.625rem;
+
     .button {
-      display: flex;
       background: $color-background-button;
-      padding: 0.625rem 0;
+      cursor: pointer;
+      display: flex;
       flex: 1;
       justify-content: center;
       margin: 0.1875rem;
-      cursor: pointer;
+      padding: 0.625rem 0;
+
       &:first-child {
         margin-left: 0;
       }
+
       &:last-child {
         margin-right: 0;
       }

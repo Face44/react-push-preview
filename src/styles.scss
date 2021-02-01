@@ -1,17 +1,18 @@
-/* add css module styles here (optional) */
-.preview-container {
-  background: #f7f7f7;
-  padding: 2em;
-  > * {
-    margin: 2em auto;
-  }
-}
+// sass-lint:disable leading-zero
+
+$color-background-preview: #f7f7f7;
 
 .preview-container {
   // Import here to avoid conflicts.
-  @import './previews/Notifo.scss';
-  @import './previews/IOSPreview.scss';
-  @import './previews/AndroidPreview.scss';
-  @import './previews/DesktopMacOS.scss';
-  @import './previews/DesktopWindows.scss';
+  @import './previews/Notifo';
+  @import './previews/IOSPreview';
+  @import './previews/AndroidPreview';
+  @import './previews/DesktopMacOS';
+  @import './previews/DesktopWindows';
+  background: $color-background-preview;
+  padding: 2em;
+
+  > * {
+    margin: 2em auto;
+  }
 }
