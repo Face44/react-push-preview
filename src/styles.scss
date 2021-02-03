@@ -8,6 +8,7 @@ $color-background-preview: #f7f7f7;
   @import './previews/IOSPreview';
   @import './previews/AndroidPreview';
   @import './previews/DesktopMacOS';
+  @import './previews/DesktopMacOSBS';
   @import './previews/DesktopWindows';
   background: $color-background-preview;
   padding: 2em;

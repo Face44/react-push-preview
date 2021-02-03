@@ -2,6 +2,7 @@ export type PushPreviewTarget =
   | 'DesktopChrome'
   | 'DeskopFirefox'
   | 'DesktopMacOS'
+  | 'DesktopMacOS2'
   | 'MobileAndroid'
   | 'MobileIOS'
   | 'Notifo';
@@ -15,6 +16,9 @@ export interface PushPreviewProps {
 
   // The title to be displayed.
   title: string;
+
+  // The website of the app to be displayed (MacOS only).
+  website: string;
 
   // The optional message.
   message?: string;

@@ -12,7 +12,10 @@ const ALL_TARGETS: { target: PushPreviewTarget, label: string }[] = [{
     label: "Chrome"
 }, {
     target: "DesktopMacOS",
-    label: "MacOS"
+    label: "MacOS Catalina"
+}, {
+  target: "DesktopMacOS2",
+  label: "MacOS Big Sur"
 }, {
     target: "MobileAndroid",
     label: "Android"
@@ -23,18 +26,20 @@ const ALL_TARGETS: { target: PushPreviewTarget, label: string }[] = [{
 
 const DEFAULT_PROPS: PushPreviewProps = {
     buttons: [{
-        title: "Reply"
-    }, {
-        title: "Ignore"
-    }, {
-        title: "Cancel"
-    }],
+      title: "Reply"
+  }, {
+      title: "Ignore"
+  }, {
+      title: "Cancel"
+  }],
+    appName: "Notifo",
     message: "Notifo is an awesome tool for all kind of notification messages that are sent through different channels.",
     iconUrl: "https://raw.githubusercontent.com/notifo-io/notifo/main/media/logo-square.png",
     imageUrl: "https://images.unsplash.com/photo-1434725039720-aaad6dd32dfe?fit=crop&w=600",
     linkName: "My Link",
-    target: "Notifo",
-    title: "Your Notification"
+    target: "DesktopMacOS2",
+    title: "Your Notification",
+    website: "example.com"
 }
 
 const App = () => {
@@ -87,6 +92,13 @@ const App = () => {
                     </div>
 
                     <div className="form-group">
+                        <label htmlFor="website">Website (MacOS only)</label>
+
+                        <input className="form-control" id="website" value={previewProps.website || ""}
+                            onChange={ev => setProps("website", ev.target.value)} />
+                    </div>
+
+                    <div className="form-group">
                         <label htmlFor="message">Message</label>
 
                         <textarea className="form-control" id="message" value={previewProps.message || ""}
@@ -117,21 +129,21 @@ const App = () => {
                     <div className="form-group">
                         <label htmlFor="button1">Button 1</label>
 
-                        <input className="form-control" id="button1" value={previewProps.buttons?.[0].title || ""}
+                        <input className="form-control" id="button1" value={previewProps.buttons?.[0]?.title || ""}
                             onChange={ev => setButton(0, ev.target.value)} />
                     </div>
 
                     <div className="form-group">
                         <label htmlFor="button2">Button 2</label>
 
-                        <input className="form-control" id="button2" value={previewProps.buttons?.[1].title || ""}
+                        <input className="form-control" id="button2" value={previewProps.buttons?.[1]?.title || ""}
                             onChange={ev => setButton(1, ev.target.value)} />
                     </div>
 
                     <div className="form-group">
                         <label htmlFor="button3">Button 3</label>
 
-                        <input className="form-control" id="button3" value={previewProps.buttons?.[2].title || ""}
+                        <input className="form-control" id="button3" value={previewProps.buttons?.[2]?.title || ""}
                             onChange={ev => setButton(2, ev.target.value)} />
                     </div>
                 </div>

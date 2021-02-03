@@ -1,7 +1,7 @@
 $width-of-preview: 22.5rem;
-$font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+$font-family: -apple-system, BlinkMacSystemFont, 'Open Sans', Arial, sans-serif;
 $color-background: #202020;
-$color-background-button: #ffffff4d;
+$color-background-button: unquote('#ffffff4d');
 $color-white: #fff;
 $color-black: #000;
 $color-text: #a7a7a7;
@@ -99,7 +99,8 @@ $color-border: #ddd;
     }
 
     .icon {
-      display: inline-block;
+      align-items: center;
+      display: flex;
       margin-right: 0.3125rem;
 
       img {

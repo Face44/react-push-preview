@@ -6,7 +6,7 @@ import { PushPreviewProps } from '../PushPreviewProps';
 export const DesktopMacOS = (
   props: PushPreviewProps & { expanded: boolean; toggle: () => void }
 ) => {
-  const { appName = '', expanded, iconUrl, message, title, toggle } = props;
+  const { expanded, iconUrl, message, title, website, toggle } = props;
 
   return (
     <div
@@ -19,7 +19,7 @@ export const DesktopMacOS = (
         </div>
         <div className="content-container">
           {title && <div className="title">{title}</div>}
-          <div className="site">{appName || 'example.com'}</div>
+          <div className="site">{website}</div>
           {message && <div className="message">{message}</div>}
         </div>
         <div className="app-logo-container">

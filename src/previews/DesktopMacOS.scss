@@ -20,7 +20,9 @@ $color-shadow-3: #0000001f;
     background: $color-background;
     border: 0;
     border-radius: 0.8125rem;
-    box-shadow: $color-shadow-1 0 0.1875rem 0.8125rem 0.0625rem, $color-shadow-2 0 0.1875rem 0.0625rem -0.125rem, $color-shadow-3 0 0.0625rem 0.3125rem 0;
+    box-shadow: $color-shadow-1 0 0.1875rem 0.8125rem 0.0625rem,
+      $color-shadow-2 0 0.1875rem 0.0625rem -0.125rem,
+      $color-shadow-3 0 0.0625rem 0.3125rem 0;
     color: $color-text;
     cursor: pointer;
     display: flex;
@@ -84,18 +86,6 @@ $color-shadow-3: #0000001f;
       img {
         width: 100%;
       }
-    }
-  }
-
-  &.expanded {
-    .header {
-      align-items: center;
-      font-size: 0.8125rem;
-      padding: 0.875rem;
-    }
-
-    .section {
-      padding: 0.875rem;
     }
   }
 }

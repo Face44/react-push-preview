@@ -1,0 +1,193 @@
+$width-of-preview: 21.5rem;
+$font-family: -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+$color-background: unquote('#f5f5f599');
+$color-white: #fff;
+$color-black: #232526;
+$color-black-lighter: #797979;
+$color-text: #4d4d4d;
+$color-shadow-1: unquote('#ffffff26');
+$color-filter: #0000001a;
+$color-border-button: #f3f3f3;
+
+.desktop-macos-bigsur {
+  color: $color-black;
+  filter: drop-shadow(0 0.125rem 0.625rem $color-filter);
+  font-family: $font-family;
+  font-weight: 400;
+  width: $width-of-preview;
+
+  .main {
+    backdrop-filter: blur(2.075119rem);
+    background: $color-background;
+    border: 0;
+    border-radius: 0.625rem;
+    box-shadow: inset 0 0 0 0.0625rem $color-shadow-1;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    > * {
+      align-items: center;
+      display: flex;
+      justify-content: center;
+    }
+
+    .header {
+      align-items: center;
+      color: $color-black-lighter;
+      display: flex;
+      justify-content: space-between;
+      line-height: normal;
+      padding: 0.5625rem 0.875rem 0 0.5625rem;
+
+      .meta-container {
+        align-items: center;
+        display: flex;
+
+        .icon-container {
+          margin-right: 0.3125rem;
+          width: 1.125rem;
+        }
+
+        .app-name {
+          font-size: 0.8125rem;
+          letter-spacing: -0.006rem;
+          text-transform: uppercase;
+        }
+      }
+
+      .options {
+        font-size: 0.75rem;
+
+        > div {
+          align-items: center;
+          display: flex;
+        }
+
+        .dots {
+          margin-right: 0.875rem;
+        }
+      }
+    }
+
+    .img-preview {
+      img {
+        height: 100%;
+        width: 100%;
+      }
+    }
+
+    .content-container {
+      align-items: flex-end;
+      flex: 1;
+      flex-direction: row;
+      justify-content: flex-start;
+      letter-spacing: 0.03125rem;
+      padding: 0 0.6875rem 0.6875rem;
+      position: relative;
+
+      > .text {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        &.limited {
+          width: calc(100% - 3.125rem);
+        }
+
+        > * {
+          font-size: 0.875rem;
+          letter-spacing: 0.0125rem;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+      }
+
+      .title {
+        color: $color-black;
+        font-size: 0.875rem;
+        font-weight: 700;
+        letter-spacing: 0;
+        line-height: 1.25rem;
+      }
+
+      .site {
+        line-height: 1.125rem;
+      }
+
+      .message {
+        line-height: 1rem;
+        white-space: normal;
+      }
+    }
+
+    .app-logo-container {
+      bottom: 0.875rem;
+      padding: 0.625rem;
+      position: absolute;
+      right: 0.875rem;
+      width: 5.625rem;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .icon {
+      img {
+        border-radius: 0.25rem;
+        width: 100%;
+      }
+    }
+  }
+
+  &.minimum {
+    .header {
+      margin-bottom: 0.0625rem;
+    }
+
+    .img-preview {
+      bottom: 0.5rem;
+      height: 2.125rem;
+      position: absolute;
+      right: 0.5rem;
+      width: 2.125rem;
+
+      img {
+        border-radius: 0.25rem;
+      }
+    }
+  }
+
+  &.expanded {
+    .main {
+      background: $color-white;
+    }
+
+    .img-preview {
+      margin: 0.25rem 0 0.4375rem;
+    }
+  }
+
+  .buttons {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    margin: 0 0.75rem 0.8125rem;
+
+    .button {
+      border-bottom: 0.0625rem solid $color-border-button;
+      display: flex;
+      font-size: 0.8125rem;
+      justify-content: center;
+      line-height: 1.5rem;
+      width: 100%;
+
+      &:last-child {
+        border: 0;
+      }
+    }
+  }
+}

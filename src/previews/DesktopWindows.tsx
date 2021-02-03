@@ -38,7 +38,7 @@ export const DesktopWindows = (
           </div>
         </div>
       </div>
-      {buttons && (
+      {buttons?.length ? (
         <div className="buttons">
           {buttons.map((button: any, i: number) => (
             <div className="button" key={i}>
@@ -48,6 +48,8 @@ export const DesktopWindows = (
             </div>
           ))}
         </div>
+      ) : (
+        ''
       )}
     </div>
   );

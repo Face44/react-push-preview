@@ -48,20 +48,20 @@ export const AndroidPreview = (
           )}
           {expanded && <Image className="image" src={imageUrl} />}
         </div>
-        {expanded && (
+        {expanded && buttons?.length ? (
           <div className="buttons">
-            {buttons && (
-              <div>
-                {buttons.map((button: any, i: number) => (
-                  <div className="button" key={i}>
-                    <Image src={button.iconUrl} />
+            <div>
+              {buttons.map((button: any, i: number) => (
+                <div className="button" key={i}>
+                  <Image src={button.iconUrl} />
 
-                    {button.title}
-                  </div>
-                ))}
-              </div>
-            )}
+                  {button.title}
+                </div>
+              ))}
+            </div>
           </div>
+        ) : (
+          ''
         )}
       </div>
     </div>
