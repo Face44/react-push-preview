@@ -59,13 +59,16 @@ export const DesktopMacOSBS = (
         <div className="footer">
           {expanded && buttons?.length ? (
             <div className="buttons">
-              {buttons.map((button: any, i: number) => (
-                <div className="button" key={i}>
-                  <Image src={button.iconUrl} />
+              {buttons.map(
+                (button: any, i: number) =>
+                  button.title && (
+                    <div className="button" key={i}>
+                      <Image src={button.iconUrl} />
 
-                  {button.title}
-                </div>
-              ))}
+                      {button.title}
+                    </div>
+                  )
+              )}
             </div>
           ) : (
             ''

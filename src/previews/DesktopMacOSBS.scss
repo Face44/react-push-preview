@@ -188,6 +188,9 @@ $color-border-button: #f3f3f3;
       &:last-child {
         border: 0;
       }
+      &:first-child:last-child {
+        border: 0;
+      }
     }
   }
 }
