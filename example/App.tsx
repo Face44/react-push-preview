@@ -159,7 +159,7 @@ const App = () => {
                         </div>
                     </div>
 
-                    <PushPreview {...previewProps} />
+                    <PushPreview {...previewProps} buttons={previewProps.buttons?.filter(btn => btn.title)?.length ? previewProps.buttons : undefined} />
                 </div>
             </div>
         </div>
