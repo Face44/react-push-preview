@@ -27,7 +27,7 @@ export const AndroidPreview = (
     >
       <div className="rpp-main">
         <div className="rpp-header">
-          <div className="app-meta">
+          <div className="rpp-app-meta">
             <BellIcon />
             <span className="rpp-app-name">{appName || 'Your App'}</span>
             <span className={`arrow-icon`}>
@@ -38,7 +38,7 @@ export const AndroidPreview = (
         <div className="rpp-section">
           <div className="rpp-short-description">
             {title && <div className="rpp-title">{title}</div>}
-            {subTitle && <div className="subtitle">{subTitle}</div>}
+            {subTitle && <div className="rpp-subtitle">{subTitle}</div>}
             {message && <div className="rpp-message">{message}</div>}
           </div>
           {!expanded && (

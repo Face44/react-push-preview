@@ -21,9 +21,7 @@ export const DesktopMacOSBS = (
 
   return (
     <div
-      className={`desktop-macos-bigsur ${
-        expanded ? 'expanded' : 'minimum'
-      }`}
+      className={`desktop-macos-bigsur ${expanded ? 'expanded' : 'minimum'}`}
       onClick={toggle}
     >
       <div className="rpp-main">
