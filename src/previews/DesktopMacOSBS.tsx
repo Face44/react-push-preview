@@ -21,20 +21,20 @@ export const DesktopMacOSBS = (
 
   return (
     <div
-      className={`test desktop-macos-bigsur ${
+      className={`desktop-macos-bigsur ${
         expanded ? 'expanded' : 'minimum'
       }`}
       onClick={toggle}
     >
-      <div className="main">
-        <div className="header">
-          <div className="meta-container">
-            <div className="icon-container">
-              <Image className="icon" src={iconUrl} fallbackSrc={iconUrl} />
+      <div className="rpp-main">
+        <div className="rpp-header">
+          <div className="rpp-meta-container">
+            <div className="rpp-icon-container">
+              <Image className="rpp-icon" src={iconUrl} fallbackSrc={iconUrl} />
             </div>
-            <div className="app-name">{appName || 'App Name'}</div>
+            <div className="rpp-app-name">{appName || 'App Name'}</div>
           </div>
-          <div className="options">
+          <div className="rpp-options">
             {expanded ? (
               <div>
                 <Dots />
@@ -45,25 +45,25 @@ export const DesktopMacOSBS = (
             )}
           </div>
         </div>
-        {expanded && <Image className="img-preview" src={imageUrl} />}
-        <div className="content-container">
-          <div className={`text ${imageUrl ? 'limited' : ''}`}>
-            {title && <div className="title">{title}</div>}
-            <div className="site">{website}</div>
-            {message && <div className="message">{message}</div>}
+        {expanded && <Image className="rpp-img-preview" src={imageUrl} />}
+        <div className="rpp-content-container">
+          <div className={`rpp-text ${imageUrl ? 'limited' : ''}`}>
+            {title && <div className="rpp-title">{title}</div>}
+            <div className="rpp-site">{website}</div>
+            {message && <div className="rpp-message">{message}</div>}
           </div>
           {!expanded && imageUrl && (
-            <Image className="img-preview" src={imageUrl} />
+            <Image className="rpp-img-preview" src={imageUrl} />
           )}
         </div>
 
         {expanded && buttons?.length && (
-          <div className="footer">
-            <div className="buttons">
+          <div className="rpp-footer">
+            <div className="rpp-buttons">
               {buttons.map(
                 (button: any, i: number) =>
                   button.title && (
-                    <div className="button" key={i}>
+                    <div className="rpp-button" key={i}>
                       <span>
                         <Image src={button.iconUrl} />
                         {button.title}

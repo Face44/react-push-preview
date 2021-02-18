@@ -10,20 +10,20 @@ export const DesktopMacOS = (
 
   return (
     <div
-      className={`test desktop-macos ${expanded ? 'expanded' : 'minimum'}`}
+      className={`desktop-macos ${expanded ? 'expanded' : 'minimum'}`}
       onClick={toggle}
     >
-      <div className="main">
-        <div className="icon-container">
+      <div className="rpp-main">
+        <div className="rpp-icon-container">
           <Chrome />
         </div>
-        <div className="content-container">
-          {title && <div className="title">{title}</div>}
-          <div className="site">{website}</div>
-          {message && <div className="message">{message}</div>}
+        <div className="rpp-content-container">
+          {title && <div className="rpp-title">{title}</div>}
+          <div className="rpp-site">{website}</div>
+          {message && <div className="rpp-message">{message}</div>}
         </div>
-        <div className="app-logo-container">
-          <Image className="icon" src={iconUrl} fallbackSrc={iconUrl} />
+        <div className="rpp-app-logo-container">
+          <Image className="rpp-icon" src={iconUrl} fallbackSrc={iconUrl} />
         </div>
       </div>
     </div>

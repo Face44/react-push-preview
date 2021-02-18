@@ -85,10 +85,10 @@ const App = () => {
                     </div>
 
                     <div className="form-group">
-                        <label htmlFor="title">Title</label>
+                        <label htmlFor="notification-title">Title</label>
 
-                        <input className="form-control" id="title" value={previewProps.title || ""}
-                            onChange={ev => setProps("title", ev.target.value)} />
+                        <input className="form-control" id="notification-title" value={previewProps.title || ""}
+                            onChange={ev => setProps("notification-title", ev.target.value)} />
                     </div>
 
                     <div className="form-group">
@@ -99,10 +99,10 @@ const App = () => {
                     </div>
 
                     <div className="form-group">
-                        <label htmlFor="message">Message</label>
+                        <label htmlFor="notification-message">Message</label>
 
-                        <textarea className="form-control" id="message" value={previewProps.message || ""}
-                            onChange={ev => setProps("message", ev.target.value)} />
+                        <textarea className="form-control" id="notification-message" value={previewProps.message || ""}
+                            onChange={ev => setProps("notification-message", ev.target.value)} />
                     </div>
 
                     <div className="form-group">
@@ -151,7 +151,7 @@ const App = () => {
                     <div className="mb-4 text-center">
                         <div className="btn-group">
                             {ALL_TARGETS.map(x => 
-                                <button key={x.target} type="button" className={targetButtonClass(x.target, previewProps.target)}
+                                <button key={x.target} type="notification-button" className={targetButtonClass(x.target, previewProps.target)}
                                     onClick={() => setPreviewProps(v => ({ ...v, target: x.target }))}>
                                     {x.label}
                                 </button>

@@ -19,31 +19,31 @@ export const DesktopWindows = (
 
   return (
     <div
-      className={`test desktop-windows ${expanded ? 'expanded' : 'minimum'}`}
+      className={`desktop-windows ${expanded ? 'expanded' : 'minimum'}`}
       onClick={toggle}
     >
-      <div className="header">
-        <Image className="image" src={imageUrl} />
+      <div className="rpp-header">
+        <Image className="rpp-image" src={imageUrl} />
       </div>
-      <div className="section">
-        <div className="icon">
-          <Image className="image" src={iconUrl} />
+      <div className="rpp-section">
+        <div className="rpp-icon">
+          <Image className="rpp-image" src={iconUrl} />
         </div>
-        <div className="content">
+        <div className="rpp-content">
           <NextArrow />
-          {title && <div className="title">{title}</div>}
-          {message && <div className="message">{message}</div>}
-          <div className="site-meta">
+          {title && <div className="rpp-title">{title}</div>}
+          {message && <div className="rpp-message">{message}</div>}
+          <div className="rpp-site-meta">
             Google Chrome • {appName || 'google.com'}
           </div>
         </div>
       </div>
       {buttons?.length ? (
-        <div className="buttons">
+        <div className="rpp-buttons">
           {buttons.map(
             (button: any, i: number) =>
               button.title && (
-                <div className="button" key={i}>
+                <div className="rpp-button" key={i}>
                   <span>
                     <Image src={button.iconUrl} />
                     {button.title}

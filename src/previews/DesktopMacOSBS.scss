@@ -16,7 +16,7 @@ $color-border-button: #f3f3f3;
   font-weight: 400;
   width: $width-of-preview;
 
-  .main {
+  .rpp-main {
     backdrop-filter: blur(2.075119rem);
     background: $color-background;
     border: 0;
@@ -33,7 +33,7 @@ $color-border-button: #f3f3f3;
       justify-content: center;
     }
 
-    .header {
+    .rpp-header {
       align-items: center;
       color: $color-black-lighter;
       display: flex;
@@ -41,23 +41,23 @@ $color-border-button: #f3f3f3;
       line-height: normal;
       padding: 0.5625rem 0.875rem 0 0.5625rem;
 
-      .meta-container {
+      .rpp-meta-container {
         align-items: center;
         display: flex;
 
-        .icon-container {
+        .rpp-icon-container {
           margin-right: 0.3125rem;
           width: 1.125rem;
         }
 
-        .app-name {
+        .rpp-app-name {
           font-size: 0.8125rem;
           letter-spacing: -0.006rem;
           text-transform: uppercase;
         }
       }
 
-      .options {
+      .rpp-options {
         font-size: 0.75rem;
 
         > div {
@@ -71,14 +71,14 @@ $color-border-button: #f3f3f3;
       }
     }
 
-    .img-preview {
+    .rpp-img-preview {
       img {
         height: 100%;
         width: 100%;
       }
     }
 
-    .content-container {
+    .rpp-content-container {
       align-items: flex-end;
       flex: 1;
       flex-direction: row;
@@ -87,7 +87,7 @@ $color-border-button: #f3f3f3;
       padding: 0 0.6875rem 0.6875rem;
       position: relative;
 
-      > .text {
+      > .rpp-text {
         display: flex;
         flex-direction: column;
         width: 100%;
@@ -105,7 +105,7 @@ $color-border-button: #f3f3f3;
         }
       }
 
-      .title {
+      .rpp-title {
         color: $color-black;
         font-size: 0.875rem;
         font-weight: 700;
@@ -113,17 +113,17 @@ $color-border-button: #f3f3f3;
         line-height: 1.25rem;
       }
 
-      .site {
+      .rpp-site {
         line-height: 1.125rem;
       }
 
-      .message {
+      .rpp-message {
         line-height: 1rem;
         white-space: normal;
       }
     }
 
-    .app-logo-container {
+    .rpp-app-logo-container {
       bottom: 0.875rem;
       padding: 0.625rem;
       position: absolute;
@@ -135,7 +135,7 @@ $color-border-button: #f3f3f3;
       }
     }
 
-    .icon {
+    .rpp-icon {
       img {
         border-radius: 0.25rem;
         width: 100%;
@@ -144,11 +144,11 @@ $color-border-button: #f3f3f3;
   }
 
   &.minimum {
-    .header {
+    .rpp-header {
       margin-bottom: 0.0625rem;
     }
 
-    .img-preview {
+    .rpp-img-preview {
       bottom: 0.5rem;
       height: 2.125rem;
       position: absolute;
@@ -162,23 +162,23 @@ $color-border-button: #f3f3f3;
   }
 
   &.expanded {
-    .main {
+    .rpp-main {
       background: $color-white;
     }
 
-    .img-preview {
+    .rpp-img-preview {
       margin: 0.25rem 0 0.4375rem;
     }
   }
 
-  .buttons {
+  .rpp-buttons {
     display: flex;
     flex: 1;
     flex-direction: column;
     padding: 0 0.75rem 0.8125rem;
     max-width: 100%;
 
-    .button {
+    .rpp-button {
       border-bottom: 0.0625rem solid $color-border-button;
       display: flex;
       font-size: 0.8125rem;
