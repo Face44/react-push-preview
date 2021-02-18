@@ -56,8 +56,10 @@ export const DesktopMacOSBS = (
             <Image className="img-preview" src={imageUrl} />
           )}
         </div>
-        <div className="footer">
-          {expanded && buttons?.length ? (
+
+
+        {expanded && buttons?.length &&
+          <div className="footer">
             <div className="buttons">
               {buttons.map(
                 (button: any, i: number) =>
@@ -71,10 +73,8 @@ export const DesktopMacOSBS = (
                   )
               )}
             </div>
-          ) : (
-            ''
-          )}
-        </div>
+          </div>
+        }
       </div>
     </div>
   );
