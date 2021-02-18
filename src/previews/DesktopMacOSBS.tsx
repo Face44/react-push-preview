@@ -57,8 +57,7 @@ export const DesktopMacOSBS = (
           )}
         </div>
 
-
-        {expanded && buttons?.length &&
+        {expanded && buttons?.length && (
           <div className="footer">
             <div className="buttons">
               {buttons.map(
@@ -74,7 +73,7 @@ export const DesktopMacOSBS = (
               )}
             </div>
           </div>
-        }
+        )}
       </div>
     </div>
   );

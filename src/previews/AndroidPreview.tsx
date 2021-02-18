@@ -48,7 +48,7 @@ export const AndroidPreview = (
           )}
           {expanded && <Image className="image" src={imageUrl} />}
         </div>
-        {expanded && buttons?.length &&
+        {expanded && buttons?.length && (
           <div className="buttons">
             <div>
               {buttons.map(
@@ -64,7 +64,7 @@ export const AndroidPreview = (
               )}
             </div>
           </div>
-        }
+        )}
       </div>
     </div>
   );
