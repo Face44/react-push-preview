@@ -149,6 +149,11 @@ $color-shadow-3: #0000001f;
       font-size: 0.8125rem;
       line-height: normal;
       padding: 0.5rem;
+      max-width: 33%;
+
+      span {
+        @include truncate;
+      }
 
       &:hover {
         background: $color-background-button-hover;

@@ -83,9 +83,15 @@ $color-text: #a7a7a7;
       cursor: pointer;
       display: flex;
       flex: 1;
+      flex-shrink: 0;
       justify-content: center;
       margin: 0.1875rem;
-      padding: 0.625rem 0;
+      padding: 0.625rem;
+      overflow: hidden;
+
+      span {
+        @include truncate;
+      }
 
       &:first-child {
         margin-left: 0;

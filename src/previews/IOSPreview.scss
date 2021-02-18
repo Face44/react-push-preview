@@ -133,7 +133,11 @@ $color-border: #ddd;
       border-bottom: 0.0625rem solid $color-border;
       color: $color-text-button;
       cursor: pointer;
-      padding: 0.9375rem 0;
+      padding: 0.9375rem;
+
+      span {
+        @include truncate;
+      }
 
       &:last-child {
         border: 0;

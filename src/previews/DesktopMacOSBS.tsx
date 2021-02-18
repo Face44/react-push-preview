@@ -63,9 +63,10 @@ export const DesktopMacOSBS = (
                 (button: any, i: number) =>
                   button.title && (
                     <div className="button" key={i}>
-                      <Image src={button.iconUrl} />
-
-                      {button.title}
+                      <span>
+                        <Image src={button.iconUrl} />
+                        {button.title}
+                      </span>
                     </div>
                   )
               )}

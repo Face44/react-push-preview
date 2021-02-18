@@ -50,3 +50,18 @@
     @include position($t, $r, $b, $l);
     position: fixed;
 }
+
+@mixin truncate-nowidth {
+    display: block;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+@mixin truncate {
+    @include truncate-nowidth;
+    max-width: 100%;
+    min-width: 0;
+    width: auto;
+}

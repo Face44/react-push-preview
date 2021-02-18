@@ -175,7 +175,8 @@ $color-border-button: #f3f3f3;
     display: flex;
     flex: 1;
     flex-direction: column;
-    margin: 0 0.75rem 0.8125rem;
+    padding: 0 0.75rem 0.8125rem;
+    max-width: 100%;
 
     .button {
       border-bottom: 0.0625rem solid $color-border-button;
@@ -184,6 +185,10 @@ $color-border-button: #f3f3f3;
       justify-content: center;
       line-height: 1.5rem;
       width: 100%;
+
+      span {
+        @include truncate;
+      }
 
       &:last-child {
         border: 0;
