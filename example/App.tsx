@@ -1,7 +1,7 @@
-import * as React from "react"
+import * as React from "react";
 import { useState } from "react";
 
-import { PushPreview, PushPreviewTarget, PushPreviewProps } from "./../src"
+import { PushPreview, PushPreviewTarget, PushPreviewProps } from "./../src";
 import "./../src/styles.scss";
 
 const ALL_TARGETS: { target: PushPreviewTarget, label: string }[] = [{
@@ -40,7 +40,7 @@ const DEFAULT_PROPS: PushPreviewProps = {
     target: "DesktopMacOS2",
     title: "Your Notification",
     website: "example.com"
-}
+};
 
 const App = () => {
     const [previewProps, setPreviewProps] = useState<PushPreviewProps>(DEFAULT_PROPS);
@@ -51,7 +51,7 @@ const App = () => {
         props[property] = value;
 
         setPreviewProps(props);
-    }
+    };
 
     const setButton = (index: number, title: string) => {
         const props = { ...previewProps };
@@ -62,7 +62,7 @@ const App = () => {
         }
 
         setPreviewProps(props);
-    }
+    };
 
     return (
         <div className="container pt-4">
@@ -85,10 +85,10 @@ const App = () => {
                     </div>
 
                     <div className="form-group">
-                        <label htmlFor="title">Title</label>
+                        <label htmlFor="notification-title">Title</label>
 
-                        <input className="form-control" id="title" value={previewProps.title || ""}
-                            onChange={ev => setProps("title", ev.target.value)} />
+                        <input className="form-control" id="notification-title" value={previewProps.title || ""}
+                            onChange={ev => setProps("notification-title", ev.target.value)} />
                     </div>
 
                     <div className="form-group">
@@ -99,10 +99,10 @@ const App = () => {
                     </div>
 
                     <div className="form-group">
-                        <label htmlFor="message">Message</label>
+                        <label htmlFor="notification-message">Message</label>
 
-                        <textarea className="form-control" id="message" value={previewProps.message || ""}
-                            onChange={ev => setProps("message", ev.target.value)} />
+                        <textarea className="form-control" id="notification-message" value={previewProps.message || ""}
+                            onChange={ev => setProps("notification-message", ev.target.value)} />
                     </div>
 
                     <div className="form-group">
@@ -151,7 +151,7 @@ const App = () => {
                     <div className="mb-4 text-center">
                         <div className="btn-group">
                             {ALL_TARGETS.map(x => 
-                                <button key={x.target} type="button" className={targetButtonClass(x.target, previewProps.target)}
+                                <button key={x.target} type="notification-button" className={targetButtonClass(x.target, previewProps.target)}
                                     onClick={() => setPreviewProps(v => ({ ...v, target: x.target }))}>
                                     {x.label}
                                 </button>
@@ -164,7 +164,7 @@ const App = () => {
             </div>
         </div>
     );
-}
+};
 
 function targetButtonClass(target: PushPreviewTarget, currentTarget?: PushPreviewTarget) {
     let clazz = "btn btn-outline-primary";
@@ -176,4 +176,4 @@ function targetButtonClass(target: PushPreviewTarget, currentTarget?: PushPrevie
     return clazz;
 }
 
-export default App
+export default App;

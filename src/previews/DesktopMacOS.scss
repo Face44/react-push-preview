@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 $width-of-preview: 29.5rem;
 $font-family: Roboto, 'Open Sans', Arial, Helvetica, sans-serif;
 $color-background: #f0f0f0;
@@ -16,7 +15,7 @@ $color-shadow-3: #0000001f;
   font-weight: 300;
   width: $width-of-preview;
 
-  .main {
+  .rpp-main {
     background: $color-background;
     border: 0;
     border-radius: 0.8125rem;
@@ -35,7 +34,7 @@ $color-shadow-3: #0000001f;
       justify-content: center;
     }
 
-    .icon-container {
+    .rpp-icon-container {
       padding-left: 0.625rem;
       width: 4.0625rem;
 
@@ -44,7 +43,7 @@ $color-shadow-3: #0000001f;
       }
     }
 
-    .content-container {
+    .rpp-content-container {
       align-items: flex-start;
       flex: 1;
       flex-direction: column;
@@ -58,22 +57,22 @@ $color-shadow-3: #0000001f;
         white-space: nowrap;
       }
 
-      .title {
+      .rpp-title {
         font-size: 1.21875rem;
         font-weight: 500;
       }
 
-      .site {
+      .rpp-site {
         font-size: 1.16875rem;
         letter-spacing: 0.025rem;
       }
 
-      .message {
+      .rpp-message {
         font-size: 1.1375rem;
       }
     }
 
-    .app-logo-container {
+    .rpp-app-logo-container {
       padding: 0.625rem;
       width: 5.625rem;
 
@@ -82,7 +81,7 @@ $color-shadow-3: #0000001f;
       }
     }
 
-    .icon {
+    .rpp-icon {
       img {
         width: 100%;
       }

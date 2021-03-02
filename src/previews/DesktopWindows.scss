@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 $width-of-preview: 25.5625rem;
 $font-family: 'Open Sans', Arial, sans-serif;
 $color-background: #202020;
@@ -12,7 +11,7 @@ $color-text: #a7a7a7;
   font-family: $font-family;
   width: $width-of-preview;
 
-  .image {
+  .rpp-image {
     width: 100%;
 
     img {
@@ -28,7 +27,7 @@ $color-text: #a7a7a7;
     }
   }
 
-  .section {
+  .rpp-section {
     display: flex;
     padding: 1.625rem 1.125rem;
     position: relative;
@@ -41,30 +40,30 @@ $color-text: #a7a7a7;
       width: 1.4375rem;
     }
 
-    .icon {
+    .rpp-icon {
       width: 3.4375rem;
     }
 
-    .content {
+    .rpp-content {
       font-size: 1.06875rem;
       line-height: 1.428125rem;
       margin-left: 1.125rem;
       width: calc(100% - 5.625rem);
 
-      .title {
+      .rpp-title {
         letter-spacing: 0.00625rem;
         max-height: 2.5rem;
         max-width: 100%;
         overflow: hidden;
       }
 
-      .message {
+      .rpp-message {
         color: $color-text;
         max-height: 4.125rem;
         overflow: hidden;
       }
 
-      .site-meta {
+      .rpp-site-meta {
         color: $color-text;
         font-size: 0.84375rem;
         margin-top: 0.625rem;
@@ -72,20 +71,26 @@ $color-text: #a7a7a7;
     }
   }
 
-  .buttons {
+  .rpp-buttons {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     padding: 0 1.125rem 1.625rem;
 
-    .button {
+    .rpp-button {
       background: $color-background-button;
       cursor: pointer;
       display: flex;
       flex: 1;
+      flex-shrink: 0;
       justify-content: center;
       margin: 0.1875rem;
-      padding: 0.625rem 0;
+      padding: 0.625rem;
+      overflow: hidden;
+
+      span {
+        @include truncate;
+      }
 
       &:first-child {
         margin-left: 0;

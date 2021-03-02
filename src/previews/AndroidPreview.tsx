@@ -22,49 +22,48 @@ export const AndroidPreview = (
 
   return (
     <div
-      className={`test android ${expanded ? 'expanded' : 'minimum'}`}
+      className={`android ${expanded ? 'expanded' : 'minimum'}`}
       onClick={toggle}
     >
-      <div className="main">
-        <div className="header">
-          <div className="app-meta">
+      <div className="rpp-main">
+        <div className="rpp-header">
+          <div className="rpp-app-meta">
             <BellIcon />
-            <span className="app-name">{appName || 'Your App'}</span>
+            <span className="rpp-app-name">{appName || 'Your App'}</span>
             <span className={`arrow-icon`}>
               {!expanded ? <DownArrow /> : <UpArrow />}
             </span>
           </div>
         </div>
-        <div className="section">
-          <div className="short-description">
-            {title && <div className="title">{title}</div>}
-            {subTitle && <div className="subtitle">{subTitle}</div>}
-            {message && <div className="message">{message}</div>}
+        <div className="rpp-section">
+          <div className="rpp-short-description">
+            {title && <div className="rpp-title">{title}</div>}
+            {subTitle && <div className="rpp-subtitle">{subTitle}</div>}
+            {message && <div className="rpp-message">{message}</div>}
           </div>
           {!expanded && (
-            <div className="image-preview-small">
+            <div className="rpp-image-preview-small">
               <Image src={iconUrl} />
             </div>
           )}
-          {expanded && <Image className="image" src={imageUrl} />}
+          {expanded && <Image className="rpp-image" src={imageUrl} />}
         </div>
-        {expanded && buttons?.length ? (
-          <div className="buttons">
+        {expanded && buttons?.length && (
+          <div className="rpp-buttons">
             <div>
               {buttons.map(
                 (button: any, i: number) =>
                   button.title && (
-                    <div className="button" key={i}>
-                      <Image src={button.iconUrl} />
-
-                      {button.title}
+                    <div className="rpp-button" key={i}>
+                      <span>
+                        <Image src={button.iconUrl} />
+                        {button.title}
+                      </span>
                     </div>
                   )
               )}
             </div>
           </div>
-        ) : (
-          ''
         )}
       </div>
     </div>

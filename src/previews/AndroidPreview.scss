@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 $width-of-preview: 25.3125rem;
 $font-family: Roboto, 'Open Sans', Arial, Helvetica, sans-serif;
 $color-background: #fefefe;
@@ -9,7 +8,7 @@ $color-text: #a7a7a7;
 $color-text-header: #838383;
 $color-text-button: #636363;
 $color-text-title: #535353;
-$color-text-app-name: #636363;
+$color-text-rpp-app-name: #636363;
 $color-text-message: #757575;
 $color-shadow-1: #00000024;
 $color-shadow-2: #00000033;
@@ -20,7 +19,7 @@ $color-shadow-3: #0000001f;
   font-weight: 400;
   width: $width-of-preview;
 
-  .main {
+  .rpp-main {
     background: $color-background;
     border: 0;
     border-radius: 0.1875rem;
@@ -28,13 +27,13 @@ $color-shadow-3: #0000001f;
     cursor: pointer;
     padding: 0;
 
-    .header {
+    .rpp-header {
       color: $color-text-header;
       display: flex;
       justify-content: space-between;
       padding: 1rem 1rem 0.5rem;
 
-      .app-meta {
+      .rpp-app-meta {
         align-items: center;
         font-size: 0.75rem;
         line-height: 0.9375rem;
@@ -43,8 +42,8 @@ $color-shadow-3: #0000001f;
           width: 1.0625rem;
         }
 
-        .app-name {
-          color: $color-text-app-name;
+        .rpp-app-name {
+          color: $color-text-rpp-app-name;
           margin: 0 0.25rem;
         }
       }
@@ -63,41 +62,41 @@ $color-shadow-3: #0000001f;
       transform: scale(1.3, 1);
     }
 
-    .section {
+    .rpp-section {
       display: flex;
       justify-content: space-between;
       padding: 0 1rem 1rem;
     }
 
-    .title {
+    .rpp-title {
       color: $color-text-title;
       margin-bottom: 0.25rem;
     }
 
-    .message {
+    .rpp-message {
       color: $color-text-message;
     }
 
-    .header > * {
+    .rpp-header > * {
       display: flex;
     }
 
-    .section > * {
+    .rpp-section > * {
       display: flex;
     }
 
-    .short-description {
+    .rpp-short-description {
       flex-direction: column;
       font-size: 0.875rem;
       max-width: calc(100% - 3.125rem);
 
-      .title,
-      .message {
+      .rpp-title,
+      .rpp-message {
         line-height: 1.25rem;
       }
     }
 
-    .image {
+    .rpp-image {
       flex: 1;
 
       img {
@@ -105,7 +104,7 @@ $color-shadow-3: #0000001f;
       }
     }
 
-    .image-preview-small {
+    .rpp-image-preview-small {
       height: 2.25rem;
       min-width: 2.25rem;
       width: 2.25rem;
@@ -117,7 +116,7 @@ $color-shadow-3: #0000001f;
       }
     }
 
-    .icon {
+    .rpp-icon {
       display: inline-block;
       margin-right: 0.3125rem;
 
@@ -129,26 +128,31 @@ $color-shadow-3: #0000001f;
   }
 
   &.expanded {
-    .section {
+    .rpp-section {
       flex-direction: column;
 
-      .image {
+      .rpp-image {
         margin-top: 0.625rem;
       }
     }
   }
 
-  .buttons {
+  .rpp-buttons {
     background: $color-background-button;
     padding: 0.625rem 0.5rem;
 
-    .button {
+    .rpp-button {
       color: $color-text-button;
       cursor: pointer;
       display: inline-block;
       font-size: 0.8125rem;
       line-height: normal;
       padding: 0.5rem;
+      max-width: 33%;
+
+      span {
+        @include truncate;
+      }
 
       &:hover {
         background: $color-background-button-hover;
